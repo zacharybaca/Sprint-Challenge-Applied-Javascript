@@ -19,63 +19,70 @@
 // Create a card for each of the articles and add the card to the DOM.
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
-    .then(response => {
-        console.log(response);
-        const articles = response.data.articles;
-        const cards = document.querySelector('.cards-container');
-        //Iterate Through Each Category
-        articles.bootstrap.forEach(card => {
-            cards.appendChild(createCard(card.headLine, card.image, card.author));
-        })
-
-        articles.javascript.forEach(card => {
-            cards.appendChild(createCard(card.headLine, card.image, card.author));
-        })
-
-        articles.technology.forEach(card => {
-            cards.appendChild(createCard(card.headLine, card.image, card.author));
-        })
-
-        articles.jquery.forEach(card => {
-            cards.appendChild(createCard(card.headLine, card.image, card.author));
-        })
-
-        articles.node.forEach(card => {
-            cards.appendChild(createCard(card.headLine, card.image, card.author));
-        })
-    })
-    .catch(error => {
-        console.log(error);
-    })
-
-function createCard(headLine, image, author) {
-    //Create Elements
-    const card = document.createElement('div');
-     headLine = document.createElement('div');
-     author = document.createElement('div');
-    const imageContainer = document.createElement('div');
-     image = document.createElement('img');
-    const byAuthor = document.createElement('span');
-    
-
-    //Assign Classes
-    card.classList.add('card');
-    headLine.classList.add('.headline');
-    author.classList.add('.author');
-    imageContainer.classList.add('img-container');
-
-    //Add Text Content
-    headLine.textContent = headLine;
-    image.src = image;
-    author.textContent = author;
-
-    //Link Elements
-    card.appendChild(headLine);
-    card.appendChild(author);
-    author.appendChild(imageContainer);
-    author.appendChild(byAuthor);
-    imageContainer.appendChild(image);
-
-
-    return card;
-}
+	.then( data => {
+	console.log('The Cards API is working Correctly', data);
+	const articles = data.data.articles;
+	const Cards = document.querySelector('.cards-container');
+	console.log(articles);
+	
+	articles.bootstrap.forEach(card => {
+	Cards.appendChild(createCard(card.headline, card.authorPhoto, card.authorName));
+	
+	})
+	
+	articles.javascript.forEach(card => {
+	Cards.appendChild(createCard(card.headline, card.authorPhoto, card.authorName));
+	
+	})
+	
+	articles.jquery.forEach(card => {
+	Cards.appendChild(createCard(card.headline, card.authorPhoto, card.authorName));
+	
+	})
+	
+	articles.node.forEach(card => {
+	Cards.appendChild(createCard(card.headline, card.authorPhoto, card.authorName));
+	
+	})
+	
+	articles.technology.forEach(card => {
+	Cards.appendChild(createCard(card.headline, card.authorPhoto, card.authorName));
+	
+	})
+	})
+	.catch( error => {
+	console.log("Error, not able to pull the Cards API Information", error);
+	})
+	
+	
+	
+	
+	function createCard(articleHeadline, authorImg, nameOfAuthor) {
+	
+	
+	const newCard = document.createElement('div');
+	const headline = document.createElement('div');
+	const author = document.createElement('div');
+	const imgContainer = document.createElement('div');
+	const authorImage = document.createElement('img');
+	const byauthor = document.createElement('span');
+	
+	newCard.classList.add('card');
+	headline.classList.add('headline');
+	author.classList.add('author');
+	imgContainer.classList.add('img-container');
+	
+	headline.textContent = articleHeadline;
+	author.textContent = nameOfAuthor;
+	authorImage.src = authorImg;
+	console.log(authorImg);
+	
+	newCard.appendChild(headline);
+	newCard.appendChild(author);
+	author.appendChild(imgContainer);
+	imgContainer.appendChild(authorImage);
+	author.appendChild(byauthor);
+	
+	
+	return newCard;
+	} 
