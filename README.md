@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+/* DOM stand for Document Object Model. Basically, it's a virtual representation of the webpage that you are viewing.*/
+
 2. What is an event?
+
+/* An event in JavaScript is where a user clicks, keypresses, or does some other action that causes some of the content on the webpage to change.*/
 
 3. What is an event listener?
 
+/* An event listener in JavaScript is a method that basically listens/watches for an user interaction on a particular element on a webpage.*/
+
 4. Why would we convert a NodeList into an Array?
 
+/* Someone might want to convert a NodeList into an Array to take advantage of the available methods that Arrays have to offer. */
+
 5. What is a component?
+
+/* A component is a block of reusable code that can be used in multiple places in an application. */
 
 ### Git Set up
 
@@ -49,13 +59,13 @@ Edit this document to include your answers after each question. Make sure to lea
 
 Your finished project must include all of the following requirements:
 
-* [ ] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
+* [x] Look through the HTML code and familiarize yourself with the different sections. Some of them already exist, but some need to be filled in. DO NOT add any code to the HTML file itself.
 
-* [ ] Following the instructions in the `Header/index.js` file, create the Header component. 
+* [x] Following the instructions in the `Header/index.js` file, create the Header component. 
 
-* [ ] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
+* [x] Following the instructions in the `Tabs/index.js` file, create individual Tabs components.
 
-* [ ] Following the instructions in the `Cards/index.js` file, create individual Cards components.
+* [x] Following the instructions in the `Cards/index.js` file, create individual Cards components.
 
 ## Stretch Problems
 
